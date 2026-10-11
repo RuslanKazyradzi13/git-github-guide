@@ -16,7 +16,7 @@
 - 9 шаблонов документов проекта и 25 схем.
 - Учебный проект `examples/tempconv` — пример профессионально оформленного репозитория.
 - PDF-версия с оглавлением, номерами страниц и закладками.
-- Анимация в README, файлы сообщества (CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, CITATION.cff), формы Issue, шаблон Pull Request и автоматические проверки оглавлений, схем и ссылок.
+- Анимация в README, файлы сообщества (CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, ACCESSIBILITY, CITATION.cff), формы Issue, шаблон Pull Request и автоматические проверки оглавлений, схем и ссылок.
 
 [Unreleased]: https://github.com/RuslanKazyradzi13/git-github-guide/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/RuslanKazyradzi13/git-github-guide/releases/tag/v1.0.0

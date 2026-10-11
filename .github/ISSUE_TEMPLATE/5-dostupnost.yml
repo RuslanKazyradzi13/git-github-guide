@@ -1,0 +1,57 @@
+name: Барьер доступности
+description: Не получается прочитать или использовать материал с вашими средствами доступа
+title: "[Доступность]: "
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо! Что уже сделано для доступности и какие ограничения известны — в ACCESSIBILITY.md.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Где
+      description: Глава или материал.
+      options:
+        - "Глава 1. Git и GitHub: основы"
+        - "Глава 2. Установка и первая настройка"
+        - "Глава 3. Основные команды Git"
+        - "Глава 4. Работа с GitHub"
+        - "Глава 5. Ветки и Pull Request"
+        - "Глава 6. Конфликты, восстановление и типичные ошибки"
+        - "Глава 7. Git и Claude Code"
+        - "Глава 8. Практика и итоговые проекты"
+        - "Глава 9. Стандарты и оформление проектов"
+        - "Глава 10. Лицензии и авторские права"
+        - "Глава 11. Безопасность и автоматизация"
+        - "Словарь терминов"
+        - "Источники"
+        - "Шаблоны документов"
+        - "Учебный проект tempconv"
+        - "PDF-версия"
+        - "README и другие файлы"
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Раздел
+      description: Номер или название раздела, если знаете.
+      placeholder: "Например: 6.3 или «Если секрет попал в историю»"
+  - type: textarea
+    id: barrier
+    attributes:
+      label: В чём трудность
+      description: Что именно не получается прочитать, увидеть или сделать.
+    validations:
+      required: true
+  - type: input
+    id: tools
+    attributes:
+      label: Чем вы пользуетесь
+      description: Браузер или программа просмотра, программа экранного доступа, увеличение экрана, высокая контрастность.
+      placeholder: "Например: Firefox, NVDA, увеличение 200%"
+  - type: textarea
+    id: fix
+    attributes:
+      label: Что помогло бы
