@@ -1,0 +1,12 @@
+# Git сам определяет текстовые файлы и хранит их с концами строк LF
+* text=auto
+
+# Скрипты PowerShell и пакетные файлы Windows — с CRLF
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Двоичные файлы не изменять
+*.png binary
+*.jpg binary
+*.pdf binary

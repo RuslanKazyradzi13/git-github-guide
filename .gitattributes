@@ -1,0 +1,7 @@
+# Текстовые файлы хранятся с концами строк LF
+* text=auto eol=lf
+
+# Двоичные файлы
+*.pdf binary
+*.png binary
+*.jpg binary

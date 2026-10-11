@@ -1,0 +1,6 @@
+# Отключить пустые Issue без шаблона и показать ссылку на политику безопасности.
+blank_issues_enabled: false
+contact_links:
+  - name: Сообщить об уязвимости
+    url: https://github.com/OWNER/tempconv/security/policy
+    about: Не публикуйте уязвимости в Issue. Следуйте политике безопасности.

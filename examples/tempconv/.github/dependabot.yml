@@ -1,0 +1,14 @@
+# Dependabot раз в неделю предлагает обновления в виде Pull Request.
+version: 2
+updates:
+  # Инструменты из requirements-dev.txt
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Действия в .github/workflows/
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

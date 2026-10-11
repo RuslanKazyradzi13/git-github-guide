@@ -1,0 +1,44 @@
+# Автоматические проверки: стиль кода и тесты.
+# Запускаются при push в main и в каждом Pull Request.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Минимальные права: только чтение кода репозитория.
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      # Действия закреплены полным хешем коммита; в комментарии — версия.
+      - name: Скачать код
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Установить Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Установить проект и инструменты
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . -r requirements-dev.txt
+
+      - name: Проверить стиль кода
+        run: ruff check .
+
+      - name: Запустить тесты
+        run: python -m unittest discover -s tests -v

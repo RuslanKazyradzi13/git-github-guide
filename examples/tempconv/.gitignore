@@ -1,0 +1,23 @@
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.ruff_cache/
+
+# Редакторы и система
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

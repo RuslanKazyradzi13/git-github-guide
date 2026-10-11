@@ -1,0 +1,242 @@
+/* Оформление PDF-версии методички. Минимализм, палитра Google. */
+
+:root {
+  --ink: #202124;
+  --muted: #5f6368;
+  --line: #dadce0;
+  --soft: #f1f3f4;
+  --code-bg: #f8f9fa;
+  --blue: #1a73e8;
+  --blue-dark: #174ea6;
+  --blue-tint: #e8f0fe;
+  --green: #1e8e3e;
+  --green-tint: #e6f4ea;
+  --yellow: #f9ab00;
+  --yellow-dark: #9a5b00;
+  --yellow-tint: #fef7e0;
+  --red: #d93025;
+  --red-dark: #a50e0e;
+  --red-tint: #fce8e6;
+  --purple: #9334e6;
+  --purple-tint: #f3e8fd;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 18mm 20mm 18mm;
+  @bottom-left {
+    content: "Git и GitHub с нуля";
+    font: 8pt "Segoe UI", Roboto, Arial, sans-serif;
+    color: #9aa0a6;
+  }
+  @bottom-right {
+    content: counter(page);
+    font: 9pt "Segoe UI", Roboto, Arial, sans-serif;
+    color: #5f6368;
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page divider {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 10.2pt;
+  line-height: 1.55;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Обложка */
+.cover {
+  page: cover;
+  height: 297mm;
+  box-sizing: border-box;
+  padding: 34mm 24mm 22mm;
+  display: flex;
+  flex-direction: column;
+  break-after: page;
+}
+.cover .bar { display: flex; gap: 6px; margin-bottom: 26mm; }
+.cover .bar span { width: 34px; height: 6px; border-radius: 3px; }
+.cover h1 {
+  break-before: auto;
+  font-size: 40pt;
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 0 0 8mm;
+  letter-spacing: -0.5px;
+  border: 0;
+}
+.cover .subtitle { font-size: 15pt; color: var(--muted); font-weight: 300; max-width: 150mm; }
+.cover .art { margin-top: auto; }
+.cover .art img { width: 100%; border: 0; }
+.cover .meta { margin-top: 10mm; font-size: 10pt; color: var(--muted); }
+
+/* Разделители частей */
+.divider {
+  position: relative;
+  page: divider;
+  break-before: page;
+  break-after: page;
+  height: 240mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.divider .label {
+  font-size: 11pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 600;
+}
+.divider .title { font-size: 30pt; font-weight: 400; line-height: 1.2; margin: 4mm 0 6mm; max-width: 160mm; }
+.divider .desc { font-size: 12pt; color: var(--muted); max-width: 150mm; }
+.divider ul { margin-top: 8mm; padding: 0; list-style: none; font-size: 11pt; }
+.divider li { padding: 1.6mm 0; border-bottom: 1px solid var(--line); }
+
+/* Оглавление */
+.toc { break-after: page; }
+.toc h1 { break-before: auto; }
+.toc .part { margin: 7mm 0 2mm; font-size: 9pt; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); font-weight: 600; }
+.toc-row { display: flex; align-items: baseline; text-decoration: none; color: var(--ink); }
+.toc-row .t { flex: 0 1 auto; }
+.toc-row .dots { flex: 1 1 auto; border-bottom: 1px dotted #bdc1c6; margin: 0 2mm; transform: translateY(-3px); min-width: 6mm; }
+.toc-row .p { flex: 0 0 10mm; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc-row.l1 { font-weight: 600; font-size: 10.6pt; margin-top: 2.6mm; }
+.toc-row.l2 { font-size: 9.4pt; padding-left: 6mm; color: #3c4043; margin-top: 0.6mm; }
+
+/* Заголовки */
+h1, h2, h3, h4 { font-weight: 500; line-height: 1.25; break-after: avoid; position: relative; }
+h1 {
+  font-size: 24pt;
+  font-weight: 400;
+  margin: 0 0 6mm;
+  padding-bottom: 3mm;
+  border-bottom: 1px solid var(--line);
+  break-before: page;
+}
+h2 { font-size: 15pt; margin: 9mm 0 3mm; color: var(--ink); }
+h3 { font-size: 12pt; margin: 6mm 0 2mm; font-weight: 600; }
+h4 { font-size: 10.5pt; margin: 5mm 0 2mm; font-weight: 600; }
+.pm { position: absolute; left: 0; top: 0; font-size: 1px; color: #fff; line-height: 1; }
+
+p { margin: 0 0 2.6mm; }
+ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+li { margin: 0.8mm 0; }
+li > p { margin: 0 0 1mm; }
+strong { font-weight: 600; }
+a { color: var(--blue-dark); text-decoration: none; }
+.deadlink { color: inherit; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 6mm 0; }
+kbd {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 8.5pt;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0 4px;
+  background: #fff;
+}
+
+/* Код */
+code {
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 9pt;
+  background: var(--soft);
+  border-radius: 4px;
+  padding: 0.3mm 1mm;
+}
+pre {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 8.6pt;
+  line-height: 1.45;
+  background: var(--code-bg);
+  border: 1px solid #eceff1;
+  border-radius: 8px;
+  padding: 3mm 4mm;
+  margin: 0 0 3.5mm;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
+pre.short { break-inside: avoid; }
+pre.output { background: #fff; border: 1px dashed #c8ccd0; color: #3c4043; }
+pre .lang {
+  display: block;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 7pt;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9aa0a6;
+  margin-bottom: 1mm;
+}
+
+/* Таблицы */
+table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 8.9pt; line-height: 1.4; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th, td { border: 1px solid var(--line); padding: 1.6mm 2.2mm; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 600; }
+td code, th code { font-size: 8.2pt; }
+
+/* Изображения и диаграммы */
+p > img:only-child, .figure img { display: block; margin: 2mm auto 4mm; max-width: 100%; height: auto; }
+img { max-width: 100%; break-inside: avoid; }
+p:has(> img:only-child) { break-inside: avoid; }
+.mermaid { display: flex; justify-content: center; margin: 2mm 0 5mm; break-inside: avoid; }
+.mermaid svg { height: auto; max-height: 215mm; }
+
+/* Примечания (GitHub alerts) */
+.callout {
+  border-left: 4px solid var(--blue);
+  background: var(--blue-tint);
+  border-radius: 0 8px 8px 0;
+  padding: 2.6mm 4mm;
+  margin: 0 0 4mm;
+  break-inside: avoid;
+}
+.callout .ct { font-weight: 600; font-size: 9pt; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 1mm; color: var(--blue-dark); }
+.callout p:last-child { margin-bottom: 0; }
+.callout.tip { border-color: var(--green); background: var(--green-tint); }
+.callout.tip .ct { color: var(--green); }
+.callout.important { border-color: var(--purple); background: var(--purple-tint); }
+.callout.important .ct { color: #681da8; }
+.callout.warning { border-color: var(--yellow); background: var(--yellow-tint); }
+.callout.warning .ct { color: var(--yellow-dark); }
+.callout.caution { border-color: var(--red); background: var(--red-tint); }
+.callout.caution .ct { color: var(--red-dark); }
+
+blockquote {
+  margin: 0 0 4mm;
+  padding: 2.4mm 4mm;
+  border-left: 3px solid var(--line);
+  color: #3c4043;
+  background: #fafafa;
+  border-radius: 0 6px 6px 0;
+  break-inside: avoid;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+details { margin: 0 0 4mm; padding: 2.6mm 4mm; border: 1px solid var(--line); border-radius: 8px; }
+summary { font-weight: 600; color: var(--muted); margin-bottom: 1.5mm; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+
+.chk { font-family: "Segoe UI Symbol", "Segoe UI", sans-serif; color: var(--muted); margin-right: 1.2mm; }
+li.task { list-style: none; margin-left: -5mm; }
+
+.appendix-file { color: var(--muted); font-size: 9pt; margin-top: -2mm; }

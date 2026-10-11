@@ -1,0 +1,10 @@
+# Служебные файлы сборки и окружений
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+
+# Системные файлы
+Thumbs.db
+desktop.ini
+.DS_Store
