@@ -1,6 +1,39 @@
+<!-- pdf:skip -->
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/hero-dark.gif">
+  <img src="images/hero-light.gif" width="100%" alt="Анимация: в терминале по очереди выполняются git init, add, commit, switch, merge и push, справа растёт граф коммитов с веткой feature, и проект отправляется на GitHub">
+</picture>
+<!-- /pdf:skip -->
+
 # Git и GitHub с нуля
 
+**Бесплатная методичка на русском языке: от первого коммита до профессионально оформленного репозитория.**
+
+<!-- pdf:skip -->
+[![Проверки](https://github.com/RuslanKazyradzi13/git-github-guide/actions/workflows/checks.yml/badge.svg)](https://github.com/RuslanKazyradzi13/git-github-guide/actions/workflows/checks.yml)
+[![Версия](https://img.shields.io/github/v/release/RuslanKazyradzi13/git-github-guide?label=%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F&color=1a73e8)](CHANGELOG.md)
+[![Текст: CC BY 4.0](https://img.shields.io/badge/%D1%82%D0%B5%D0%BA%D1%81%D1%82-CC%20BY%204.0-188038)](LICENSE)
+[![Код: MIT](https://img.shields.io/badge/%D0%BA%D0%BE%D0%B4-MIT-188038)](LICENSE-CODE)
+[![PDF](https://img.shields.io/badge/PDF-%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C-d93025)](https://github.com/RuslanKazyradzi13/git-github-guide/releases/latest/download/git-github-guide.pdf)
+
+[**Начать с главы 1 →**](01_git_i_github.md) &nbsp;·&nbsp; [Скачать PDF](https://github.com/RuslanKazyradzi13/git-github-guide/releases/latest/download/git-github-guide.pdf) &nbsp;·&nbsp; [Шаблоны документов](templates/) &nbsp;·&nbsp; [Пример репозитория](examples/tempconv/)
+
+</div>
+<!-- /pdf:skip -->
+
 Методичка для тех, кто начинает изучать разработку программного обеспечения и никогда не работал с Git. Вы научитесь сохранять версии проекта, работать с GitHub, безопасно использовать AI-ассистентов и оформлять проекты по международным практикам.
+
+## Что внутри
+
+- **С нуля и по шагам.** Для каждой команды — зачем она нужна, как её ввести, что вы увидите и какие ошибки встречаются чаще всего.
+- **Проверено на практике.** Выводы команд получены в настоящем Git, факты сверены с официальной документацией **11 октября 2026 года**.
+- **Для Windows 10 и 11.** PowerShell и Git Bash, установка Git, вход в GitHub из терминала.
+- **Наглядно.** 25 схем и диаграммы Mermaid: три области Git, ветки, Pull Request, восстановление изменений, утечка секрета.
+- **С практикой.** Вопросы с ответами в каждой главе, упражнения и два итоговых проекта.
+- **Как в профессиональных проектах.** README, лицензии, CONTRIBUTING, SECURITY, SemVer, CI, Dependabot, CodeQL — и готовые шаблоны.
+- **Git и AI.** Как работать с AI-ассистентом и не потерять контроль над кодом: ветки, контрольные точки, просмотр изменений, откат.
 
 ![Маршрут обучения: часть I — главы 1–8, часть II — главы 9–11](images/00-roadmap.svg)
 
@@ -8,7 +41,49 @@
 
 **После части II вы сможете** оформить репозиторий как профессиональный проект: README, лицензия, документы сопровождения, версии и релизы, автоматические проверки и настройки безопасности.
 
-Сведения проверены по официальным источникам **11 октября 2026 года**. Примеры рассчитаны на Windows 10 и 11.
+## Кому подойдёт
+
+- Студентам и начинающим разработчикам, которые ни разу не работали с Git.
+- Тем, кто пользуется Git по памяти и хочет понять, что происходит при каждой команде.
+- Авторам проектов, которые готовят репозиторий к публикации.
+- Преподавателям и наставникам: материалы можно свободно использовать на занятиях с указанием авторства (см. [лицензию](#лицензия)).
+
+## Первый коммит за 10 минут
+
+1. Установите Git — способы описаны в [главе 2](02_ustanovka_i_nastroyka.md#22-установка-git-на-windows). Через winget:
+
+   ```powershell
+   winget install --id Git.Git -e --source winget
+   ```
+
+2. Откройте **новое** окно PowerShell и представьтесь Git — эти данные попадут в каждый коммит:
+
+   ```powershell
+   git config --global user.name "Иван Петров"
+   git config --global user.email "ivan.petrov@example.com"
+   git config --global init.defaultBranch main
+   ```
+
+3. Создайте учебную папку и репозиторий:
+
+   ```powershell
+   mkdir ~\projects\git-practice
+   cd ~\projects\git-practice
+   git init
+   notepad hello.txt
+   ```
+
+   В Блокноте нажмите **Да**, напишите `Привет, Git!`, сохраните и закройте.
+
+4. Сохраните первую версию и посмотрите историю:
+
+   ```powershell
+   git add hello.txt
+   git commit -m "Первый коммит"
+   git log --oneline
+   ```
+
+Получилось? Теперь разберитесь, что произошло, — начните с [главы 1](01_git_i_github.md).
 
 ## Содержание
 
@@ -99,23 +174,22 @@
 
 ## PDF-версия
 
-Файл [git-github-guide.pdf](git-github-guide.pdf) содержит обложку, оглавление с номерами страниц, все главы, словарь, источники и шаблоны. В PDF есть закладки для навигации.
+Файл [git-github-guide.pdf](git-github-guide.pdf) содержит обложку, оглавление с номерами страниц, все главы, словарь, источники и шаблоны. В PDF есть закладки для навигации. Последняя версия файла также прикреплена к [релизу](https://github.com/RuslanKazyradzi13/git-github-guide/releases/latest).
 
-Пересобрать PDF после правок (нужны Node.js 22+, установленный Microsoft Edge или Google Chrome и Python с пакетом PyMuPDF — для номеров страниц в оглавлении):
+Как пересобрать PDF после правок — в [tools/README.md](tools/README.md).
 
-```powershell
-python tools/make_images.py
-python tools/toc.py
-node tools/build_pdf.mjs
-```
+## Как помочь проекту
 
-Подробнее — в [tools/README.md](tools/README.md).
+- **Нашли ошибку или устаревшие сведения?** [Создайте Issue](https://github.com/RuslanKazyradzi13/git-github-guide/issues/new/choose) — для этого есть готовые формы.
+- **Хотите исправить сами?** Прочитайте [CONTRIBUTING.md](CONTRIBUTING.md): как предложить правку, правила текста и проверки.
+- **Нашли уязвимость в скриптах или учебном проекте?** Сообщите закрыто по правилам [SECURITY.md](SECURITY.md), а не в открытом Issue.
+- **Методичка помогла?** Поставьте звезду репозиторию — так её проще найти другим.
 
-## Как поддерживать актуальность
+Участвуя в проекте, вы соглашаетесь соблюдать [кодекс поведения](CODE_OF_CONDUCT.md). История версий — в [CHANGELOG.md](CHANGELOG.md).
 
-- Перед публикацией правок запустите проверку ссылок: `python tools/check_links.py --web`.
-- Раз в полгода сверяйте версии в [sources.md](sources.md) с официальными сайтами: Git, Git для Windows, действия GitHub Actions, Python.
-- Интерфейс GitHub меняется: при расхождении описаний ориентируйтесь на документацию GitHub.
+## Как цитировать
+
+Сведения для цитирования записаны в [CITATION.cff](CITATION.cff). На странице репозитория нажмите **Cite this repository** справа — GitHub покажет готовую ссылку в форматах APA и BibTeX.
 
 ## Лицензия
 
@@ -123,9 +197,9 @@ node tools/build_pdf.mjs
 
 | Что | Лицензия | Файл |
 | --- | --- | --- |
-| Тексты методички, схемы в `images/`, шаблоны в `templates/`, PDF-версия | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ru) — можно копировать, распространять и изменять, в том числе в коммерческих целях, если указать автора, дать ссылку на лицензию и отметить внесённые изменения | [LICENSE](LICENSE) |
+| Тексты методички, схемы и анимация в `images/`, шаблоны в `templates/`, PDF-версия | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ru) — можно копировать, распространять и изменять, в том числе в коммерческих целях, если указать автора, дать ссылку на лицензию и отметить внесённые изменения | [LICENSE](LICENSE) |
 | Скрипты в `tools/` и код учебного проекта в `examples/tempconv/` | MIT | [LICENSE-CODE](LICENSE-CODE) |
 
 Как указать авторство: «Git и GitHub с нуля», Ruslan Kazyradzi, https://github.com/RuslanKazyradzi13/git-github-guide, лицензия CC BY 4.0.
 
-Файл [examples/tempconv/LICENSE](examples/tempconv/LICENSE) с заполнителями вместо имени — часть учебного задания (образец оформления), а не лицензия этого репозитория.
+Файл [examples/tempconv/LICENSE](examples/tempconv/LICENSE) с заполнителями вместо имени — часть учебного задания (образец оформления), а не лицензия этого репозитория. [Кодекс поведения](CODE_OF_CONDUCT.md) — официальный перевод [Contributor Covenant 2.1](https://www.contributor-covenant.org/ru/version/2/1/code_of_conduct/) (CC BY 4.0).
