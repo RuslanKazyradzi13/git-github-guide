@@ -7,7 +7,7 @@
 // MARKDOWN_IT_JS и MERMAID_JS (пути к файлам *.min.js).
 
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -17,12 +17,27 @@ const TOOLS = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(TOOLS, "..");
 const OUT = process.argv.includes("--out") ? resolve(process.argv[process.argv.indexOf("--out") + 1]) : join(ROOT, "git-github-guide.pdf");
 const CHECKED = "11 октября 2026 года";
+// Ссылки на файлы, которых нет в PDF, ведут на их страницы на GitHub.
+const REPO_URL = "https://github.com/RuslanKazyradzi13/git-github-guide/blob/main/";
 
 const asUrl = (p) => (/^https?:/.test(p) ? p : pathToFileURL(resolve(p)).href);
 const MARKDOWN_IT = asUrl(process.env.MARKDOWN_IT_JS || "https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js");
 const MERMAID = asUrl(process.env.MERMAID_JS || "https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js");
 
 const read = (rel) => readFileSync(join(ROOT, rel), "utf8");
+// Блоки README только для GitHub (анимация, значки, кнопки) в PDF не нужны.
+const skipWebOnly = (md) => md.replace(/<!-- pdf:skip -->[\s\S]*?<!-- \/pdf:skip -->\n?/g, "");
+
+function repoFiles(dir = ROOT, base = "") {
+  const out = [];
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (e.name === ".git" || e.name === "node_modules") continue;
+    const rel = base + e.name;
+    if (e.isDirectory()) out.push(rel, rel + "/", ...repoFiles(join(dir, e.name), rel + "/"));
+    else out.push(rel);
+  }
+  return out;
+}
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const PART1 = ["01_git_i_github.md", "02_ustanovka_i_nastroyka.md", "03_osnovnye_komandy.md", "04_rabota_s_github.md",
@@ -63,7 +78,7 @@ function buildBook(pass, tocPages) {
       `<div class="meta">Сведения проверены по официальным источникам ${CHECKED} · Windows 10 и 11 · Git 2.56</div></section>` },
     { kind: "html", html: '<section class="toc" id="toc-list"></section>' },
     { kind: "md", id: "readme", file: "README.md", part: 0, tocDepth: 1,
-      md: read("README.md").replace(/^# .+$/m, "# О методичке") },
+      md: skipWebOnly(read("README.md")).replace(/^# .+$/m, "# О методичке") },
     divider("part1", 1, "Часть I", "Git и GitHub с нуля",
       "Как сохранять версии проекта, работать с GitHub, ветками и Pull Request, восстанавливать изменения и безопасно работать с AI.", PART1),
     ...PART1.map((f) => ({ kind: "md", id: fileMap[f], file: f, part: 1, tocDepth: 2, md: read(f) })),
@@ -88,6 +103,7 @@ function buildBook(pass, tocPages) {
   return {
     pass, tocPages, fileMap, sections,
     rootUrl: pathToFileURL(ROOT).href + "/",
+    repoUrl: REPO_URL, repoFiles: repoFiles(),
     partTitles: { 1: "Часть I · Git и GitHub с нуля", 2: "Часть II · Профессиональные проекты", 3: "Приложения" },
   };
 }

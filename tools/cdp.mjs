@@ -26,7 +26,7 @@ export async function launch() {
   const profile = mkdtempSync(join(tmpdir(), "guide-cdp-"));
   const proc = spawn(exe, [
     "--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
-    "--allow-file-access-from-files", "--remote-debugging-port=0",
+    "--allow-file-access-from-files", "--remote-debugging-port=0", "--force-color-profile=srgb",
     `--user-data-dir=${profile}`, "about:blank",
   ], { stdio: "ignore" });
   const portFile = join(profile, "DevToolsActivePort");

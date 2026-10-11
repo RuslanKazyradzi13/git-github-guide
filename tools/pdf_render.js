@@ -72,12 +72,15 @@
     return `<span class="pm">${code}</span>`;
   }
 
+  const repoFiles = new Set(BOOK.repoFiles || []);
+
   function resolveHref(href, env) {
     if (/^(https?:|mailto:)/.test(href)) return { href };
     if (href.startsWith("#")) return { href: `#${env.sec.id}--${decodeURIComponent(href.slice(1))}` };
     const [p, anchor] = href.split("#");
     const target = normalize(dirOf(env.sec.file) + decodeURIComponent(p));
     const id = BOOK.fileMap[target];
+    if (!id && repoFiles.has(target)) return { href: BOOK.repoUrl + encodeURI(target) + (anchor ? "#" + anchor : "") };
     if (!id) return { dead: true };
     return { href: anchor ? `#${id}--${decodeURIComponent(anchor)}` : `#${id}` };
   }
