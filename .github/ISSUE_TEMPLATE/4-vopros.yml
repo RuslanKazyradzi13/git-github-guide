@@ -1,0 +1,51 @@
+name: Вопрос по материалу
+description: Что-то непонятно, даже после повторного чтения
+title: "[Вопрос]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Непонятное место — тоже повод улучшить текст. Перед вопросом загляните в словарь терминов (glossary.md) и в таблицу ошибок главы 6.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Где
+      description: Глава или материал.
+      options:
+        - "Глава 1. Git и GitHub: основы"
+        - "Глава 2. Установка и первая настройка"
+        - "Глава 3. Основные команды Git"
+        - "Глава 4. Работа с GitHub"
+        - "Глава 5. Ветки и Pull Request"
+        - "Глава 6. Конфликты, восстановление и типичные ошибки"
+        - "Глава 7. Git и Claude Code"
+        - "Глава 8. Практика и итоговые проекты"
+        - "Глава 9. Стандарты и оформление проектов"
+        - "Глава 10. Лицензии и авторские права"
+        - "Глава 11. Безопасность и автоматизация"
+        - "Словарь терминов"
+        - "Источники"
+        - "Шаблоны документов"
+        - "Учебный проект tempconv"
+        - "PDF-версия"
+        - "README и другие файлы"
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Раздел
+      description: Номер или название раздела, если знаете.
+      placeholder: "Например: 6.3 или «Если секрет попал в историю»"
+  - type: textarea
+    id: question
+    attributes:
+      label: Вопрос
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: Что вы уже попробовали
+      description: Команды и их вывод, если вопрос о них.

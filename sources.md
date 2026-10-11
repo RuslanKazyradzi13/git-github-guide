@@ -99,6 +99,10 @@
 - [Configuring issue templates](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
 - [Creating a pull request template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
 - [About CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
+- [About community profiles for public repositories](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories)
+- [Syntax for issue forms](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms)
+- [Customizing your repository's social media preview](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview)
+- [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) — элемент `<picture>` для картинок под светлую и тёмную тему
 - [Managing releases in a repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 - [Automatically generated release notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes)
 - [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) — раздел D.5 «License Grant to Other Users» (редакция от 27 апреля 2026 года).
@@ -153,7 +157,7 @@
 - [The Unlicense](https://unlicense.org/), [OSI: The Unlicense](https://opensource.org/license/unlicense)
 - [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 - [REUSE](https://reuse.software/), [спецификация REUSE 3.3](https://reuse.software/spec-3.3/), [руководство](https://reuse.software/tutorial/)
-- [Contributor Covenant](https://www.contributor-covenant.org/) (версия 3.0)
+- [Contributor Covenant](https://www.contributor-covenant.org/) (версия 3.0); [официальный перевод версии 2.1 на русский](https://www.contributor-covenant.org/ru/version/2/1/code_of_conduct/)
 - [Citation File Format](https://citation-file-format.github.io/), [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/)
 - [Developer Certificate of Origin](https://developercertificate.org/)
 - [U.S. Copyright Office: Copyright and Artificial Intelligence](https://www.copyright.gov/ai/), [Registration Guidance (2023)](https://www.copyright.gov/ai/ai_policy_guidance.pdf), [Part 2: Copyrightability (2025)](https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf)

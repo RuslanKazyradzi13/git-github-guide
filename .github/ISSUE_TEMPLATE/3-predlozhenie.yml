@@ -1,0 +1,24 @@
+name: Предложение
+description: Новая тема, пример, схема или улучшение структуры
+title: "[Предложение]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Что добавить или изменить
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Зачем
+      description: Какую трудность читателя это решит.
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Участие
+      options:
+        - label: Я готов(а) подготовить Pull Request с этим изменением

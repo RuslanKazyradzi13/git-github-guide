@@ -1,0 +1,58 @@
+name: Ошибка в тексте
+description: Опечатка, неточность, команда не работает или выводит другое
+title: "[Ошибка]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что помогаете сделать методичку точнее! Чем подробнее описание, тем быстрее исправление.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Где
+      description: Глава или материал.
+      options:
+        - "Глава 1. Git и GitHub: основы"
+        - "Глава 2. Установка и первая настройка"
+        - "Глава 3. Основные команды Git"
+        - "Глава 4. Работа с GitHub"
+        - "Глава 5. Ветки и Pull Request"
+        - "Глава 6. Конфликты, восстановление и типичные ошибки"
+        - "Глава 7. Git и Claude Code"
+        - "Глава 8. Практика и итоговые проекты"
+        - "Глава 9. Стандарты и оформление проектов"
+        - "Глава 10. Лицензии и авторские права"
+        - "Глава 11. Безопасность и автоматизация"
+        - "Словарь терминов"
+        - "Источники"
+        - "Шаблоны документов"
+        - "Учебный проект tempconv"
+        - "PDF-версия"
+        - "README и другие файлы"
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Раздел
+      description: Номер или название раздела, если знаете.
+      placeholder: "Например: 6.3 или «Если секрет попал в историю»"
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что не так
+      description: Процитируйте фрагмент или опишите проблему. Если команда сработала иначе — вставьте её вывод.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Как правильно
+      description: Если знаете. Для фактов приложите ссылку на официальный источник.
+  - type: input
+    id: environment
+    attributes:
+      label: Окружение
+      description: Для ошибок в командах — версия Windows и вывод `git --version`.
+      placeholder: "Windows 11, git version 2.56.0.windows.2"

@@ -1,0 +1,55 @@
+name: Устаревшие сведения
+description: Новая версия программы, изменился интерфейс GitHub, ссылка ведёт не туда
+title: "[Устарело]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Сведения в методичке проверены на дату, указанную в sources.md. Если что-то изменилось с тех пор — расскажите.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Где
+      description: Глава или материал.
+      options:
+        - "Глава 1. Git и GitHub: основы"
+        - "Глава 2. Установка и первая настройка"
+        - "Глава 3. Основные команды Git"
+        - "Глава 4. Работа с GitHub"
+        - "Глава 5. Ветки и Pull Request"
+        - "Глава 6. Конфликты, восстановление и типичные ошибки"
+        - "Глава 7. Git и Claude Code"
+        - "Глава 8. Практика и итоговые проекты"
+        - "Глава 9. Стандарты и оформление проектов"
+        - "Глава 10. Лицензии и авторские права"
+        - "Глава 11. Безопасность и автоматизация"
+        - "Словарь терминов"
+        - "Источники"
+        - "Шаблоны документов"
+        - "Учебный проект tempconv"
+        - "PDF-версия"
+        - "README и другие файлы"
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Раздел
+      description: Номер или название раздела, если знаете.
+      placeholder: "Например: 6.3 или «Если секрет попал в историю»"
+  - type: textarea
+    id: change
+    attributes:
+      label: Что изменилось
+      description: Как написано в методичке и как стало сейчас.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Официальный источник
+      description: Ссылка на документацию, примечания к выпуску или страницу, где видно изменение.
+      placeholder: "https://git-scm.com/..."
+    validations:
+      required: true

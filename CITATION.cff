@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "Если вы используете эту методичку, пожалуйста, сошлитесь на неё так."
+title: "Git и GitHub с нуля"
+abstract: >-
+  Методичка на русском языке для начинающих: Git и GitHub с нуля, ветки и
+  Pull Request, восстановление изменений, работа с AI-ассистентом, оформление
+  программных проектов по международным практикам, лицензии, безопасность и
+  автоматизация.
+authors:
+  - family-names: Kazyradzi
+    given-names: Ruslan
+    alias: RuslanKazyradzi13
+version: 1.0.0
+date-released: "2026-10-11"
+license:
+  - CC-BY-4.0
+  - MIT
+url: "https://github.com/RuslanKazyradzi13/git-github-guide"
+repository-code: "https://github.com/RuslanKazyradzi13/git-github-guide"
+keywords:
+  - git
+  - github
+  - tutorial
+  - version control
+  - open source
+  - software licensing
+preferred-citation:
+  type: manual
+  title: "Git и GitHub с нуля"
+  authors:
+    - family-names: Kazyradzi
+      given-names: Ruslan
+  year: 2026
+  version: 1.0.0
+  languages:
+    - ru
+  url: "https://github.com/RuslanKazyradzi13/git-github-guide"

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Сообщить об уязвимости
+    url: https://github.com/RuslanKazyradzi13/git-github-guide/security/advisories/new
+    about: Уязвимости в скриптах и учебном проекте — только закрытым сообщением, не в открытом Issue.
+  - name: Документация Git
+    url: https://git-scm.com/docs
+    about: Официальный справочник по командам Git.
+  - name: Документация GitHub
+    url: https://docs.github.com/ru
+    about: Официальная документация GitHub на русском языке.
