@@ -194,13 +194,23 @@
 
 ## Лицензия
 
-© 2026 Ruslan Kazyradzi.
+© 2026 Ruslan Kazyradzi. Материалы открыты: их можно свободно использовать — на занятиях, в своих проектах и в коммерческих целях.
 
-| Что | Лицензия | Файл |
+| Что | Лицензия | Условие |
 | --- | --- | --- |
-| Тексты методички, схемы и анимация в `images/`, шаблоны в `templates/`, PDF-версия | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.ru) — можно копировать, распространять и изменять, в том числе в коммерческих целях, если указать автора, дать ссылку на лицензию и отметить внесённые изменения | [LICENSE](LICENSE) |
-| Скрипты в `tools/` и код учебного проекта в `examples/tempconv/` | MIT | [LICENSE-CODE](LICENSE-CODE) |
+| Тексты, схемы и анимация, шаблоны, PDF | [CC BY 4.0](LICENSE) | Укажите автора и источник, дайте ссылку на лицензию, отметьте изменения |
+| Скрипты `tools/`, учебный проект `examples/tempconv/` | [MIT](LICENSE-CODE) | Сохраните уведомление об авторских правах и текст лицензии |
 
-Как указать авторство: «Git и GitHub с нуля», Ruslan Kazyradzi, https://github.com/RuslanKazyradzi13/git-github-guide, лицензия CC BY 4.0.
+Как указать авторство — скопируйте строку:
 
-Файл [examples/tempconv/LICENSE](examples/tempconv/LICENSE) с заполнителями вместо имени — часть учебного задания (образец оформления), а не лицензия этого репозитория. [Кодекс поведения](CODE_OF_CONDUCT.md) — официальный перевод [Contributor Covenant 2.1](https://www.contributor-covenant.org/ru/version/2/1/code_of_conduct/) (CC BY 4.0).
+```text
+«Git и GitHub с нуля», Ruslan Kazyradzi, CC BY 4.0
+https://github.com/RuslanKazyradzi13/git-github-guide
+```
+
+Если вы изменили материал, добавьте: «с изменениями». Простое изложение лицензии — на [сайте Creative Commons](https://creativecommons.org/licenses/by/4.0/deed.ru).
+
+Обратите внимание:
+
+- `examples/tempconv/LICENSE` с заполнителями — учебный образец, а не лицензия этого репозитория.
+- [Кодекс поведения](CODE_OF_CONDUCT.md) основан на официальном переводе [Contributor Covenant 2.1](https://www.contributor-covenant.org/ru/version/2/1/code_of_conduct/) (CC BY 4.0).
